@@ -3,6 +3,8 @@ const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
 const searchBox = document.querySelector(".search input");
 const searchBtn = document.querySelector(".search button");
 const weatherIcon = document.querySelector(".weather-icon");
+const weatherInfo = document.querySelector(".weather");
+const errorMessage = document.querySelector(".error-message");
 
 async function checkWeather(city) {
   try {
@@ -26,9 +28,12 @@ async function checkWeather(city) {
     };
     weatherIcon.src = weatherIcons[data.weather[0].main] || "images/default.png";
 
-    document.querySelector(".weather").style.display = "block";
+    weatherInfo.style.display = "block";
+    errorMessage.style.display = "none"; // Hide error message if previously displayed
   } catch (error) {
-    alert(error.message);
+    weatherInfo.style.display = "none"; // Hide weather info if city not found
+    errorMessage.style.display = "block"; // Show error message
+    errorMessage.innerHTML = error.message;
   }
 }
 
@@ -37,6 +42,9 @@ searchBtn.addEventListener("click", () => {
   if (city) {
     checkWeather(city);
   } else {
-    alert("Please enter a city name.");
+    errorMessage.style.display = "block";
+    errorMessage.innerHTML = "Please enter a city name.";
+    weatherInfo.style.display = "none"; // Hide weather info if input is empty
   }
 });
+
