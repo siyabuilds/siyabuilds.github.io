@@ -99,6 +99,17 @@ body {
   display: none;
 }
 
+.error-message {
+  width: 100%;
+  max-width: 600px;
+  background: #ff4f4f;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   body {
