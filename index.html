@@ -14,7 +14,7 @@
     <title>S Lukhele - Portfolio</title>
   </head>
   <body>
-    <div id="header">
+    <section id="header">
       <div class="container">
         <nav>
           <span class="header_text"> markuptitan </span>
@@ -26,13 +26,68 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
-        <div class="extra_header_text">
-          <h2>
-            Hi, I am <span>Samson</span><br />
-            from South Africa
-          </h2>
+        <div class="extra_header_text"></div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="images/profile.jpg" alt="" />
+        </div>
+        <div class="about-col-2 subtitle">
+          <h3>About Me</h3>
+          <p>
+            I'm Samson, an aspiring Full Stack Web Developer currently focused
+            on mastering JavaScript. I love coding, playing basketball, and
+            exploring online trading. My goal is to become a DevOps Engineer,
+            and I'm eager to connect with fellow developers and work on
+            innovative projects as I continue my learning journey.
+          </p>
+          <div class="tab_titles">
+            <p
+              class="tab-links active-link active-tab"
+              onclick="openTab('skills')"
+            >
+              Skills
+            </p>
+            <p class="tab-links" onclick="openTab('experience')">Experience</p>
+            <p class="tab-links" onclick="openTab('education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li>
+                <span>Web Design</span><br />Proficient in building web and app
+                interfaces using HTML, CSS, and design principles.
+              </li>
+              <li>
+                <span>React</span><br />Skilled in developing interactive user
+                interfaces with React, JSX, and state management.
+              </li>
+              <li>
+                <span>Backend Development</span><br />Knowledgeable in creating
+                server-side applications with databases, APIs, and server logic.
+              </li>
+              <li></li>
+              <li>
+                <span>Linux</span><br />Experienced in administering systems,
+                automating tasks, and managing servers using Linux commands and
+                scripts.
+              </li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>N/A</span><br />N/A</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>Umuzi</span><br />12 February 2024 - date</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+    <script src="js/index.js"></script>
   </body>
 </html>
