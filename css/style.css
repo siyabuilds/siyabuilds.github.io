@@ -5,7 +5,7 @@
 
 body {
   min-height: 100vh;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "M PLUS Rounded 1c", sans-serif;
 }
 
 nav {
@@ -53,10 +53,20 @@ nav li:first-child {
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-  display: none;
+  visibility: hidden;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+}
+
+.sidebar.show {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .menuButton {

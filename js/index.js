@@ -1,9 +1,9 @@
 const showSidebar = () => {
   const sidebar = document.querySelector(".sidebar");
-  sidebar.style.display = "flex";
+  sidebar.classList.add("show");
 };
 
 const hideSidebar = () => {
   const sidebar = document.querySelector(".sidebar");
-  sidebar.style.display = "none";
+  sidebar.classList.remove("show");
 };
