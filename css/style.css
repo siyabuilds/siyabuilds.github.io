@@ -98,3 +98,69 @@ nav li:first-child {
     display: block;
   }
 }
+
+.about-section {
+  background: url(../images/pic.jpg) no-repeat left center / cover;
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+}
+
+.inner-container {
+  flex: 1;
+  background-color: #f0f0f0;
+  padding: 75px;
+  max-width: 55%;
+  border-radius: 5px;
+}
+
+.inner-container h1 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.text {
+  font-size: 16px;
+  color: #545454;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-weight: 700;
+  font-size: 1rem;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.skills span {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.skills span:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-5px);
+}
+
+@media screen and (max-width: 600px) {
+  .about-section {
+    flex-direction: column;
+    padding: 60px;
+  }
+  .about-section h1 {
+    text-align: center;
+  }
+  .inner-container {
+    max-width: 100%;
+    padding: 30px;
+  }
+}
