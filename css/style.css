@@ -262,3 +262,91 @@ nav li:first-child {
     font-size: 0.9em;
   }
 }
+
+.skills-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+}
+
+.skills-section h2 {
+  width: 100%;
+  font-size: 2em;
+  margin-bottom: 40px;
+  color: #333;
+  text-align: center;
+}
+
+.skills-category {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.skills-category h3 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.skills-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.skills-card span {
+  background-color: #f0f0f0;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.skills-card span i {
+  font-size: 3rem;
+  color: #555;
+}
+
+.skills-card span:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  .skills-category {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .skills-section h2 {
+    font-size: 1.8em;
+  }
+
+  .skills-category h3 {
+    font-size: 1.2em;
+  }
+
+  .skills-card span {
+    font-size: 0.875rem;
+    padding: 10px 20px;
+  }
+
+  .skills-card span i {
+    font-size: 2.5rem;
+  }
+}
