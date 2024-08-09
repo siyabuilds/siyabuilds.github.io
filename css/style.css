@@ -12,6 +12,31 @@ html {
   scroll-behavior: smooth;
 }
 
+a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:hover {
+  color: #1d72b8;
+  text-decoration: underline;
+}
+
+.swal2-popup {
+  background: #2c2c2c;
+  color: #f5f5f5;
+}
+.swal2-confirm,
+.swal2-cancel {
+  background: #1d1d1d;
+  color: #f5f5f5;
+}
+.swal2-confirm:hover,
+.swal2-cancel:hover {
+  background: #333333;
+}
 nav {
   background-color: #2c2c2c;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
