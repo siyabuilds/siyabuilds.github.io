@@ -13,8 +13,8 @@ html {
 }
 
 nav {
-  background-color: white;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  background-color: #2c2c2c;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 nav ul {
@@ -35,16 +35,18 @@ nav a {
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: black;
+  color: #f1f1f1;
+  transition: background-color 0.3s ease;
 }
 
 nav a:hover {
-  background-color: #f0f0f0;
+  background-color: #444;
 }
 
 nav li:first-child {
   margin-right: auto;
   font-size: 25px;
+  color: #f1f1f1;
 }
 
 .sidebar {
@@ -54,9 +56,9 @@ nav li:first-child {
   height: 100vh;
   width: 250px;
   z-index: 999;
-  backdrop-filter: blur(10px);
-  background-color: rgba(39, 33, 33, 0.1);
-  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  background-color: rgba(20, 20, 20, 0.9);
+  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.3);
   visibility: hidden;
   flex-direction: column;
   align-items: flex-start;
@@ -83,6 +85,7 @@ nav li:first-child {
 
 .sidebar a {
   width: 100%;
+  color: #f1f1f1;
 }
 
 @media (max-width: 800px) {
@@ -104,30 +107,46 @@ nav li:first-child {
 }
 
 .about-section {
-  background: url(../images/pic.jpg) no-repeat left center / cover;
+  background: #2c3e50;
   padding: 100px 0;
   display: flex;
   align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #f9f9f9;
+}
+
+.about-section::before {
+  content: "";
+  background: url(../images/pic.jpg) no-repeat center center / cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.5;
 }
 
 .inner-container {
-  flex: 1;
-  background-color: #f0f0f0;
+  background-color: #1c1f24;
   padding: 75px;
   max-width: 55%;
-  border-radius: 5px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .inner-container h1 {
   margin-bottom: 30px;
-  font-size: 36px;
+  font-size: 2.5em;
   font-weight: 900;
+  color: #f9f9f9;
 }
 
 .text {
-  font-size: 16px;
-  color: #545454;
-  line-height: 1.5;
+  font-size: 1em;
+  color: #e0e0e0;
+  line-height: 1.6;
   text-align: justify;
   margin-bottom: 40px;
 }
@@ -143,15 +162,16 @@ nav li:first-child {
 }
 
 .skills span {
-  background-color: #f0f0f0;
+  background-color: #333a42;
   padding: 10px 20px;
   border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  color: #f9f9f9;
   transition: background-color 0.3s, transform 0.3s;
 }
 
 .skills span:hover {
-  background-color: #e0e0e0;
+  background-color: #1f232a;
   transform: translateY(-5px);
 }
 
@@ -159,8 +179,6 @@ nav li:first-child {
   .about-section {
     flex-direction: column;
     padding: 60px;
-  }
-  .about-section h1 {
     text-align: center;
   }
   .inner-container {
@@ -170,7 +188,7 @@ nav li:first-child {
 }
 
 .education {
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #2c3e50, #4c6e91);
   padding: 60px 20px;
 }
 
@@ -182,17 +200,25 @@ nav li:first-child {
 
 .education-content h2 {
   font-size: 2.8em;
-  color: #333;
+  color: #f9f9f9;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .education-item {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: #1c1f24;
   padding: 30px;
   margin-bottom: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   border-radius: 8px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.education-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .education-item img {
@@ -210,33 +236,49 @@ nav li:first-child {
 .education-details h3 {
   font-size: 1.8em;
   margin-bottom: 15px;
-  color: #555;
+  color: #f9f9f9;
 }
 
 .education-details ul {
-  list-style-type: disc;
-  padding-left: 20px;
+  list-style-type: none;
+  padding-left: 0;
   margin: 15px 0;
-  color: #666;
+  color: #c9c9c9;
 }
 
 .education-details ul li {
+  position: relative;
+  padding-left: 30px;
   margin-bottom: 10px;
+  font-size: 1em;
+}
+
+.education-details ul li::before {
+  content: "\0634";
+  font-size: 1.5em;
+  color: #4c6e91;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.education-details ul li:hover {
+  color: #e9ecef;
+  background: rgba(76, 110, 145, 0.1);
+  border-radius: 4px;
+  padding: 10px 30px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .education-details p {
   font-size: 1em;
-  color: #888;
+  color: #aaaaaa;
 }
 
 @media screen and (max-width: 768px) {
   .education-item {
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-  }
-
-  .education-content h2 {
-    text-align: center;
   }
 
   .education-item img {
@@ -251,10 +293,6 @@ nav li:first-child {
 @media screen and (max-width: 480px) {
   .education h2 {
     font-size: 2.2em;
-  }
-
-  .education-content h2 {
-    text-align: center;
   }
 
   .education-details h3 {
@@ -272,30 +310,35 @@ nav li:first-child {
   justify-content: center;
   gap: 20px;
   padding: 40px 20px;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, #2c3e50, #4c6e91);
 }
 
 .skills-section h2 {
   width: 100%;
   font-size: 2em;
   margin-bottom: 40px;
-  color: #333;
+  color: #f9f9f9;
   text-align: center;
 }
 
 .skills-category {
-  background-color: #fff;
+  background: #1c1f24;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   width: 300px;
   text-align: center;
+  transition: transform 0.4s ease;
+}
+
+.skills-category:hover {
+  transform: translateY(-10px);
 }
 
 .skills-category h3 {
   font-size: 1.5em;
   margin-bottom: 15px;
-  color: #333;
+  color: #f9f9f9;
 }
 
 .skills-card {
@@ -306,26 +349,28 @@ nav li:first-child {
 }
 
 .skills-card span {
-  background-color: #f0f0f0;
+  background: #333a42;
   padding: 20px 30px;
   border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   font-weight: 700;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
   gap: 15px;
-  transition: background-color 0.3s, transform 0.3s;
+  color: #e9ecef;
+  transition: background 0.5s ease, transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .skills-card span i {
   font-size: 3rem;
-  color: #555;
+  color: #6c7a89;
 }
 
 .skills-card span:hover {
-  background-color: #e0e0e0;
-  transform: scale(1.1);
+  background: #1f232a;
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 @media screen and (max-width: 768px) {
