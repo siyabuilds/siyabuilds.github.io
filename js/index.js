@@ -53,13 +53,10 @@ function submitForm(actionUrl, formData) {
   fetch(actionUrl, {
     method: "POST",
     body: formData,
+    mode: "no-cors",
   })
-    .then((response) => {
-      if (response.ok) {
-        showSuccessAlert();
-      } else {
-        throw new Error("Network response was not ok.");
-      }
+    .then(() => {
+      showSuccessAlert();
     })
     .catch((error) => {
       showErrorAlert(error);
