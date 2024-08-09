@@ -39,3 +39,36 @@ function showAlert() {
   });
   return false;
 }
+
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formData = new FormData(this);
+
+    fetch(this.action, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        if (response.ok) {
+          Swal.fire({
+            title: "Thank you!",
+            text: "Your message has been sent successfully.",
+            icon: "success",
+            confirmButtonText: "OK",
+          });
+        } else {
+          throw new Error("Network response was not ok.");
+        }
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "Oops!",
+          text: "There was an error sending your message.",
+          icon: "error",
+          confirmButtonText: "OK",
+        });
+      });
+  });
