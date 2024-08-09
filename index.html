@@ -20,49 +20,49 @@
     <nav>
       <ul class="sidebar">
         <li onclick="hideSidebar()">
-          <a href="#"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#000000"
-            >
-              <path
-                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-              /></svg
-          ></a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+            />
+          </svg>
         </li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Education</a></li>
-        <li><a href="#">Skills</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
       <ul>
         <li><a href="#">S Lukhele</a></li>
-        <li><a href="#" class="hideOnMobile">About</a></li>
-        <li><a href="#" class="hideOnMobile">Education</a></li>
-        <li><a href="#" class="hideOnMobile">Skills</a></li>
-        <li><a href="#" class="hideOnMobile">Projects</a></li>
-        <li><a href="#" class="hideOnMobile">Contact</a></li>
+        <li><a href="#about" class="hideOnMobile">About</a></li>
+        <li><a href="#education" class="hideOnMobile">Education</a></li>
+        <li><a href="#skills" class="hideOnMobile">Skills</a></li>
+        <!-- corrected href -->
+        <li><a href="#projects" class="hideOnMobile">Projects</a></li>
+        <li><a href="#contact" class="hideOnMobile">Contact</a></li>
         <li onclick="showSidebar()" class="menuButton">
-          <a href="#"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-              fill="#000000"
-            >
-              <path
-                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
-              /></svg
-          ></a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
         </li>
       </ul>
     </nav>
-    <div class="about-section">
+
+    <div id="about" class="about-section">
       <div class="inner-container">
         <h1>About me</h1>
         <p class="text">
@@ -79,7 +79,8 @@
         </div>
       </div>
     </div>
-    <div clas="education">
+
+    <div id="education" class="education">
       <div class="education-content">
         <h2>Education</h2>
         <div class="education-item">
@@ -107,7 +108,8 @@
         </div>
       </div>
     </div>
-    <div class="skills-section">
+
+    <div id="skills" class="skills-section">
       <h2>Skills</h2>
       <div class="skills-category">
         <h3>Backend Development</h3>
