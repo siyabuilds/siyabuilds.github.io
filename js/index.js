@@ -53,7 +53,6 @@ function submitForm(actionUrl, formData) {
   fetch(actionUrl, {
     method: "POST",
     body: formData,
-    mode: "no-cors",
   })
     .then(() => {
       showSuccessAlert();
