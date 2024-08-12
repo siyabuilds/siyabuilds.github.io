@@ -86,3 +86,7 @@ function showErrorAlert(error) {
 document
   .getElementById("contactForm")
   .addEventListener("submit", handleFormSubmission);
+
+// Update the year automatically
+const yearSpan = document.getElementById("year");
+yearSpan.textContent = new Date().getFullYear();
