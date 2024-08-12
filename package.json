@@ -1,0 +1,22 @@
+{
+  "name": "markuptitan.github.io",
+  "version": "1.0.2",
+  "description": "This portfolio is my next big release which uses a couple of impressive features I wrote about in the README.md",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git://github.com:markuptitan/markuptitan.github.io"
+  },
+  "author": {
+    "name": "Siyabonga Samson Lukhele",
+    "email": "samsonlukhele76@gmail.com",
+    "website": "markuptitan.github.io"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  }
+}
