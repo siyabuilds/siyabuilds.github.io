@@ -25,13 +25,13 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/markuptitan/portfolio-website.git
+   git clone https://github.com/markuptitan/markuptitan.github.io
    ```
 
 2. **Navigate to the project directory:**
 
    ```bash
-   cd portfolio-website
+   cd markuptitan.github.io
    ```
 
 3. **Install dependencies:**
