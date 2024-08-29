@@ -41,35 +41,22 @@ function showAlert() {
 }
 
 function handleFormSubmission(event) {
-  event.preventDefault();
+  event.preventDefault(); // Prevent the default form submission
 
   const form = event.target;
   const formData = new FormData(form);
 
-  const googleScriptUrl =
-    "https://script.google.com/macros/s/AKfycbxpMGwHB1tLhVmgLyE_cCMXvxdMY-0sDeu_yc0p6NLKb7e8HytVTt4Z6o0D8CVtoT_a/exec";
-
-  submitForm(googleScriptUrl, formData);
+  submitForm(form.action, formData);
 }
 
 function submitForm(actionUrl, formData) {
-  const formDataString = new URLSearchParams(formData).toString();
-
   fetch(actionUrl, {
     method: "POST",
-    body: formDataString,
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    mode: "cors",
+    body: formData,
+    mode: "no-cors",
   })
-    .then((response) => response.json())
-    .then((data) => {
-      if (data.message === "Data saved successfully!") {
-        showSuccessAlert();
-      } else {
-        showErrorAlert();
-      }
+    .then(() => {
+      showSuccessAlert();
     })
     .catch((error) => {
       showErrorAlert(error);
@@ -86,7 +73,7 @@ function showSuccessAlert() {
 }
 
 function showErrorAlert(error) {
-  console.error("Error:", error);
+  console.error("Error:", error); // Log the error for debugging
   Swal.fire({
     title: "Oops!",
     text: "There was an error sending your message, but it might have been submitted. Please check your email for confirmation.",
@@ -95,7 +82,7 @@ function showErrorAlert(error) {
   });
 }
 
-// Attach the submit event listener to the form
+// Attach the submit event to the form
 document
   .getElementById("contactForm")
   .addEventListener("submit", handleFormSubmission);
