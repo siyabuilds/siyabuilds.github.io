@@ -62,7 +62,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a onclick="showAlert()" href="#projects">Projects</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <ul>
@@ -72,9 +72,7 @@
         <li><a href="#skills" class="hideOnMobile">Skills</a></li>
         <!-- corrected href -->
         <li>
-          <a href="#projects" onclick="showAlert()" class="hideOnMobile"
-            >Projects</a
-          >
+          <a href="#projects" class="hideOnMobile">Projects</a>
         </li>
         <li><a href="#contact" class="hideOnMobile">Contact</a></li>
         <li onclick="showSidebar()" class="menuButton">
@@ -174,7 +172,8 @@
         </div>
       </div>
     </section>
-    <section class="projects">
+    <section id="projects" class="projects">
+      <h2>Projects</h2>
       <div class="projects-container">
         <div class="project-card">
           <img src="images/person_info.png" alt="Person extended" />
