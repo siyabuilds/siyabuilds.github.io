@@ -34,19 +34,13 @@ Before you begin, ensure you have the following installed:
    cd markuptitan.github.io
    ```
 
-3. **Install dependencies:**
-
-   ```bash
-   npm install
-   ```
-
-4. **Start the local development server:**
+3. **Start the local development server:**
 
    ```bash
    npm start
    ```
 
-5. **Open your browser and visit:**
+4. **Open your browser and visit:**
 
    ```bash
    (http://localhost:3000)
