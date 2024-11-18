@@ -3,11 +3,14 @@
   padding: 0;
 }
 
-/* :root {
-  --primary-bg: #2c2c2c;
-  --primary-color: #f5f5f5;
-  --main-bg: #2c3539;
-} */
+:root[data-theme="dark"] {
+  --primary-bg: #1a1a1a;
+  --main-bg: #333333;
+  --primary-color: #f9f9f9;
+  --cards-bg: #2b2b2b;
+  --span-bgs: #444444;
+  --span-bgs-hover: #555555;
+}
 
 :root {
   --primary-bg: #f5f5f5;
@@ -42,15 +45,18 @@ a:hover {
 .swal2-popup {
   background: var(--primary-bg);
   color: var(--primary-color);
+  transition: all 0.4s ease;
 }
 .swal2-confirm,
 .swal2-cancel {
-  background: #1d1d1d;
+  background: var(--main-bg);
   color: var(--primary-color);
+  transition: all 0.4s ease;
 }
 .swal2-confirm:hover,
 .swal2-cancel:hover {
-  background: #333333;
+  color: var(--primary-color);
+  background: var(--span-bgs-hover);
 }
 nav {
   background-color: var(--primary-bg);
@@ -235,7 +241,7 @@ nav li:first-child {
 .education-item {
   display: flex;
   align-items: center;
-  background-color: #1c1f24;
+  background-color: var(--cards-bg);
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -246,8 +252,16 @@ nav li:first-child {
 .education-item:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  background-color: var(--span-bgs-hover);
 }
 
+.education-item .date {
+  transition: all 0.4s ease;
+}
+
+.education-item:hover .date {
+  color: var(--primary-bg);
+}
 .education-item img {
   width: 100px;
   height: 100px;
@@ -268,8 +282,7 @@ nav li:first-child {
 
 .education-details ul {
   list-style-type: none;
-  padding-left: 0;
-  margin: 15px 0;
+  padding: 10px;
   color: var(--primary-color);
 }
 
@@ -281,17 +294,18 @@ nav li:first-child {
 }
 
 .education-details ul li::before {
-  content: "\0634";
-  font-size: 1.5em;
+  content: ">> ";
+  font-size: 1em;
   color: #4c6e91;
-  position: absolute;
+  position: relative;
   left: 0;
   top: 0;
+  transition: all 0.4s ease;
 }
 
 .education-details ul li:hover {
-  color: #e9ecef;
-  background: rgba(76, 110, 145, 0.1);
+  color: var(--main-bg);
+  background: var(--primary-color);
   border-radius: 4px;
   padding: 10px 30px;
   transition: background 0.3s ease, color 0.3s ease;
@@ -349,7 +363,7 @@ nav li:first-child {
 }
 
 .skills-category {
-  background: #1c1f24;
+  background: var(--cards-bg);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -376,7 +390,7 @@ nav li:first-child {
 }
 
 .skills-card span {
-  background: #333a42;
+  background: var(--span-bgs);
   padding: 20px 30px;
   border-radius: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -391,11 +405,11 @@ nav li:first-child {
 
 .skills-card span i {
   font-size: 3rem;
-  color: #6c7a89;
+  color: var(--primary-color);
 }
 
 .skills-card span:hover {
-  background: #1f232a;
+  background: var(--span-bgs-hover);
   transform: scale(1.1) rotate(2deg);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
@@ -448,7 +462,7 @@ nav li:first-child {
 }
 
 .project-card {
-  background-color: #1c1f24;
+  background-color: var(--cards-bg);
   border-radius: 8px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   padding: 20px;
@@ -459,6 +473,8 @@ nav li:first-child {
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  background-color: var(--span-bgs-hover);
+  transform: scale(1.05);
 }
 
 .project-card img {
@@ -547,7 +563,7 @@ nav li:first-child {
 .contact-info,
 form {
   flex: 1;
-  background: #1c1f24;
+  background: var(--cards-bg);
   border-radius: 5.5px;
   padding: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -558,6 +574,7 @@ form {
 form:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  background-color: var(--span-bgs-hover);
 }
 
 .contact-info p {
@@ -631,9 +648,9 @@ input,
 textarea {
   width: 100%;
   padding: 12px;
-  border: 2px solid #333a42;
+  border: 1px solid var(--primary-color);
   border-radius: 6px;
-  background-color: #333a42;
+  background-color: var(--main-bg);
   color: var(--primary-color);
   font-size: 1em;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -651,7 +668,7 @@ button {
   width: 100%;
   padding: 12px;
   background-color: #4c6e91;
-  color: var(--primary-color);
+  color: var(--span-bgs);
   border: none;
   border-radius: 6px;
   font-size: 1.1em;
@@ -738,5 +755,5 @@ footer a {
 }
 
 footer a:hover {
-  color: #ccc;
+  color: var(--span-bgs-hover);
 }
