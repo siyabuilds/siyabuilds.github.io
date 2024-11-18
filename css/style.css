@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  transition: all 0.4s ease;
 }
 
 :root[data-theme="dark"] {
@@ -151,6 +152,37 @@ nav li:first-child {
   .menuButton {
     display: block;
   }
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+#theme-toggle-btn {
+  background: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#theme-toggle-btn:hover {
+  transform: scale(1.2);
+  outline: none;
+}
+
+#theme-icon {
+  font-size: 2rem;
+  transition: transform 0.4s ease;
+}
+
+[data-theme="light"] #theme-icon {
+  color: #ffcc00;
+}
+
+[data-theme="dark"] #theme-icon {
+  color: #f4f4f4;
 }
 
 .about-section {

@@ -90,3 +90,23 @@ document
 // Update the year automatically
 const yearSpan = document.getElementById("year");
 yearSpan.textContent = new Date().getFullYear();
+
+// Dark Mode Toggle Logic
+const toggleButton = document.getElementById("theme-toggle-btn");
+const themeIcon = document.getElementById("theme-icon");
+
+const savedTheme = localStorage.getItem("theme") || "light";
+
+document.documentElement.setAttribute("data-theme", savedTheme);
+
+themeIcon.classList = savedTheme === "dark" ? "fas fa-moon" : "fas fa-sun";
+
+toggleButton.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  const newTheme = currentTheme === "dark" ? "light" : "dark";
+
+  document.documentElement.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
+
+  themeIcon.classList = newTheme === "dark" ? "fas fa-moon" : "fas fa-sun";
+});
