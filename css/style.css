@@ -700,7 +700,7 @@ button {
   width: 100%;
   padding: 12px;
   background-color: #4c6e91;
-  color: var(--span-bgs);
+  color: var(--primary-color);
   border: none;
   border-radius: 6px;
   font-size: 1.1em;
