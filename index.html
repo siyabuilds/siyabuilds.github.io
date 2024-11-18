@@ -43,57 +43,58 @@
     <meta name="twitter:image" content="images/logo.png" />
   </head>
   <body>
-    <nav>
-      <ul class="sidebar">
-        <li onclick="hideSidebar()">
-          <a
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-            >
-              <path
-                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
-              /></svg
-          ></a>
-        </li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <ul>
-        <li class="flex">
-          <a href="#">S Lukhele</a>
-          <span id="theme-toggle-btn" aria-label="Toggle theme">
-            <i id="theme-icon" class="fas fa-moon"></i>
-          </span>
-        </li>
-        <li><a href="#about" class="hideOnMobile">About</a></li>
-        <li><a href="#education" class="hideOnMobile">Education</a></li>
-        <li><a href="#skills" class="hideOnMobile">Skills</a></li>
-        <!-- corrected href -->
-        <li>
-          <a href="#projects" class="hideOnMobile">Projects</a>
-        </li>
-        <li><a href="#contact" class="hideOnMobile">Contact</a></li>
-        <li onclick="showSidebar()" class="menuButton">
-          <a
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="24px"
-              viewBox="0 -960 960 960"
-              width="24px"
-            >
-              <path
-                d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
-              /></svg
-          ></a>
-        </li>
-      </ul>
-    </nav>
+    <header>
+      <nav>
+        <ul class="sidebar">
+          <li onclick="hideSidebar()">
+            <a
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+              >
+                <path
+                  d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                /></svg
+            ></a>
+          </li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <ul>
+          <li class="flex">
+            <span id="theme-toggle-btn" aria-label="Toggle theme">
+              <i id="theme-icon" class="fas fa-moon"></i> </span
+            ><a href="#">S Lukhele</a>
+          </li>
+          <li><a href="#about" class="hideOnMobile">About</a></li>
+          <li><a href="#education" class="hideOnMobile">Education</a></li>
+          <li><a href="#skills" class="hideOnMobile">Skills</a></li>
+          <!-- corrected href -->
+          <li>
+            <a href="#projects" class="hideOnMobile">Projects</a>
+          </li>
+          <li><a href="#contact" class="hideOnMobile">Contact</a></li>
+          <li onclick="showSidebar()" class="menuButton">
+            <a
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+              >
+                <path
+                  d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                /></svg
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
     <section id="about" class="about-section">
       <div class="inner-container">
