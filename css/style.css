@@ -815,25 +815,30 @@ footer a:hover {
 /* Github Repo Commits Section */
 
 .activity-timeline {
-  display: none;
+  display: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 .repo-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 800px;
 }
 
 .repo-card {
   background: var(--cards-bg);
-  border: 1px solid --primary-bg;
+  padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  padding: 15px;
-  width: 300px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease,
-    background-color 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 350px;
 }
 
 .repo-card:hover {
@@ -908,5 +913,9 @@ footer a:hover {
 @media (max-width: 768px) {
   .event-marker {
     left: -36px;
+  }
+  .repo-cards {
+    grid-template-columns: 1fr;
+    justify-content: center;
   }
 }
