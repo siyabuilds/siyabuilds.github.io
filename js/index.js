@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (validRepos.length > 1) {
-      activityTimeline.style.display = "block";
+      activityTimeline.style.display = "flex";
     }
 
     validRepos.forEach(({ repo, commits }) => {
@@ -193,7 +193,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       commitMessage.innerHTML = `${new Date(
         commit.commit.author.date
-      ).toLocaleString()}: <br /> 
+      ).toLocaleString("en-GB", {
+        day: "2-digit",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      })}: <br /> 
       <span>${commit.commit.message}</span>`;
 
       eventContent.appendChild(commitMessage);
