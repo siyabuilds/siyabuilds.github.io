@@ -113,15 +113,15 @@ toggleButton.addEventListener("click", () => {
 
 // Activity display section
 document.addEventListener("DOMContentLoaded", () => {
+  const userName = "markuptitan";
   const repoCardsContainer = document.getElementById("repo-cards");
   const activityTimeline = document.querySelector(".activity-timeline");
 
   activityTimeline.style.display = "none";
 
   const fetchRepoData = async () => {
-    const username = "markuptitan";
     const reposResponse = await fetch(
-      `https://api.github.com/users/${username}/repos`
+      `https://api.github.com/users/${userName}/repos`
     );
     let repos = await reposResponse.json();
 
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const fetchCommits = async (repoName) => {
     const commitsResponse = await fetch(
-      `https://api.github.com/repos/markuptitan/${repoName}/commits`
+      `https://api.github.com/repos/${userName}/${repoName}/commits`
     );
     const commits = await commitsResponse.json();
     return commits;
