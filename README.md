@@ -3,13 +3,12 @@
 Welcome to my portfolio website! 🎉 This project showcases my skills and projects in web development with a modern and dynamic user experience. The site is responsive and features interactive elements to enhance user engagement.
 
 ## 🛠 Features
-
-- **Responsive Navbar:** A sleek, responsive navigation bar that adapts to different screen sizes.
-- **SweetAlert2 Integration:** Implemented SweetAlert2 for interactive popups, fully customized with a dark theme to match the website's aesthetic.
-- **Form Submission:** Form data is captured using Formspree (soon to be migrated to Google Sheets for better data handling).
-- **Modern Design:** The website uses dark gradient colors to create a modern and visually appealing experience.
-- **FontAwesome Icons:** Leveraged FontAwesome for skill icons and contact details, adding a professional touch.
-- **Responsive Contact Section:** The contact section is designed to be fully responsive, ensuring a consistent user experience across devices.
+- **Dynamic Activity Timeline**: Powered by the GitHub API, the Activity Timeline highlights the most recent commits from my repositories, updating in real-time to reflect my latest work.
+- **Dark Mode Toggle**: Seamless light/dark mode switching, with shades of white and grey for light mode and darker tones for dark mode. User preferences are saved for a consistent experience.
+- **Interactive Popups**: Custom SweetAlert2 alerts for a polished and professional touch to user interactions.
+- **Live Contact Form**: Functional contact form via Formspree, with plans for migration to Google Sheets for improved data handling.
+- **Minimalist UI Design**: A sleek and modern design using subtle shades of grey and white, emphasizing simplicity and functionality.
+- **FontAwesome Integration**: Skill icons and contact details are enhanced with FontAwesome for a professional and visually engaging experience.
 
 ## 🚀 Getting Started
 
@@ -52,9 +51,11 @@ For a live version of the website, visit [markuptitan.github.io](https://markupt
 
 ## 📋 Future Plans
 
-- **Google Sheets Integration:** Moving form submissions to Google Sheets for better data handling and automation.
-- **Light/Dark Mode Toggle:** Implementing a feature to switch between light and dark modes, with cookies for saving user preferences.
+- **Google Sheets Integration:** Moving the contact form submission to Google Sheets for better automation and data handling.
+- **Additional Portfolio Projects**: Continuously expanding the projects section to include real-world applications and complex solutions.
 
 ## 📧 Contact
 
 Feel free to reach out via the [contact section](https://markuptitan.github.io#contact) on my website.
+
+Let me know if there's anything else you'd like to tweak or expand upon!
