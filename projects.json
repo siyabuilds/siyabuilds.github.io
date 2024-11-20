@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio Website",
+    "description": "A personal portfolio to showcase my web development projects.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "link": "https://markuptitan.github.io",
+    "repo": "https://github.com/markuptitan/markuptitan.github.io"
+  },
+  {
+    "id": 2,
+    "title": "Random Quotes Generator",
+    "description": "A web app that fetches random quotes using an API.",
+    "technologies": ["JavaScript", "API"],
+    "link": "https://markuptitan.github.io/random_quotes_generator",
+    "repo": "https://github.com/markuptitan/random_quotes_generator"
+  },
+  {
+    "id": 3,
+    "title": "TypeScript Mastery",
+    "description": "A collection of TypeScript exercises and examples.",
+    "technologies": ["TypeScript"],
+    "link": "",
+    "repo": "https://github.com/markuptitan/typescript-mastery"
+  },
+  {
+    "id": 4,
+    "title": "React Counter",
+    "description": "A simple counter app to practice React fundamentals.",
+    "technologies": ["React", "JavaScript"],
+    "link": "https://markuptitan.github.io/react-counter/",
+    "repo": "https://github.com/markuptitan/react-counter"
+  }
+]
