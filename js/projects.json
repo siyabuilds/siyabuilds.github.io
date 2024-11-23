@@ -6,7 +6,7 @@
     "technologies": ["HTML", "CSS", "JavaScript"],
     "link": "https://markuptitan.github.io",
     "repo": "https://github.com/markuptitan/markuptitan.github.io",
-    "image": "images/portfolio-website.png"
+    "image": "/images/portfolio-website.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "technologies": ["JavaScript", "API"],
     "link": "https://markuptitan.github.io/random_quotes_generator",
     "repo": "https://github.com/markuptitan/random_quotes_generator",
-    "image": "images/random-quoutes.png"
+    "image": "/images/random-quoutes.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "technologies": ["TypeScript"],
     "link": "https://github.com/markuptitan/typescript-mastery",
     "repo": "https://github.com/markuptitan/typescript-mastery",
-    "image": "images/typescript-mastery.png"
+    "image": "/images/typescript-mastery.png"
   },
   {
     "id": 4,
@@ -33,6 +33,6 @@
     "technologies": ["React", "JavaScript"],
     "link": "https://markuptitan.github.io/react-counter/",
     "repo": "https://github.com/markuptitan/react-counter",
-    "image": "images/react-counter.png"
+    "image": "/images/react-counter.png"
   }
 ]

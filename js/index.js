@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Projects display using json
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("./js/projects.json")
+  fetch("/js/projects.json")
     .then((response) => response.json())
     .then((projects) => {
       const projectsContainer = document.querySelector(".projects-container");
