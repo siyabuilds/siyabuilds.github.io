@@ -231,3 +231,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   fetchRepoData();
 });
+
+// Projects display using json
+document.addEventListener("DOMContentLoaded", () => {
+  fetch("./js/projects.json")
+    .then((response) => response.json())
+    .then((projects) => {
+      const projectsContainer = document.querySelector(".projects-container");
+
+      projects.forEach((project) => {
+        const projectCard = document.createElement("div");
+        projectCard.classList.add("project-card");
+
+        projectCard.innerHTML = `
+          <img src="${project.image}" alt="${project.title}" />
+          <h3>${project.title}</h3>
+          <p>
+            ${project.description}
+            <br />
+            You can view the original task 
+            <a href="${project.repo}" target="_blank">here</a>.
+          </p>
+          <a href="${project.link}" target="_blank">
+            <button>Visit Live Project</button>
+          </a>
+        `;
+
+        projectsContainer.appendChild(projectCard);
+      });
+    })
+    .catch((error) => console.error("Error loading the projects:", error));
+});

@@ -1,11 +1,12 @@
 [
   {
     "id": 1,
-    "title": "Portfolio Website",
+    "title": "Portfolio Website - This Site",
     "description": "A personal portfolio to showcase my web development projects.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "link": "https://markuptitan.github.io",
-    "repo": "https://github.com/markuptitan/markuptitan.github.io"
+    "repo": "https://github.com/markuptitan/markuptitan.github.io",
+    "image": "images/portfolio-website.png"
   },
   {
     "id": 2,
@@ -13,22 +14,25 @@
     "description": "A web app that fetches random quotes using an API.",
     "technologies": ["JavaScript", "API"],
     "link": "https://markuptitan.github.io/random_quotes_generator",
-    "repo": "https://github.com/markuptitan/random_quotes_generator"
+    "repo": "https://github.com/markuptitan/random_quotes_generator",
+    "image": "images/random-quoutes.png"
   },
   {
     "id": 3,
-    "title": "TypeScript Mastery",
+    "title": "TypeScript Mastery - Learning Repo",
     "description": "A collection of TypeScript exercises and examples.",
     "technologies": ["TypeScript"],
-    "link": "",
-    "repo": "https://github.com/markuptitan/typescript-mastery"
+    "link": "https://github.com/markuptitan/typescript-mastery",
+    "repo": "https://github.com/markuptitan/typescript-mastery",
+    "image": "images/typescript-mastery.png"
   },
   {
     "id": 4,
-    "title": "React Counter",
+    "title": "React Counter - Basic Intro",
     "description": "A simple counter app to practice React fundamentals.",
     "technologies": ["React", "JavaScript"],
     "link": "https://markuptitan.github.io/react-counter/",
-    "repo": "https://github.com/markuptitan/react-counter"
+    "repo": "https://github.com/markuptitan/react-counter",
+    "image": "images/react-counter.png"
   }
 ]
