@@ -56,6 +56,6 @@ For a live version of the website, visit [https://markuptitan.site](https://www.
 
 ## 📧 Contact
 
-Feel free to reach out via the [contact section](https://markuptitan.github.io#contact) on my website.
+Feel free to reach out via the [contact section](https://www.markuptitan.site#contact) on my website.
 
 Let me know if there's anything else you'd like to tweak or expand upon!
