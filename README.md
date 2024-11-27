@@ -47,7 +47,7 @@ Before you begin, ensure you have the following installed:
 
 ## 🌐 Live Version
 
-For a live version of the website, visit [markuptitan.github.io](https://markuptitan.github.io).
+For a live version of the website, visit [https://markuptitan.site](https://www.markuptitan.site).
 
 ## 📋 Future Plans
 
