@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "https://www.markuptitan.site",
+      "permanent": true
+    }
+  ]
+}
