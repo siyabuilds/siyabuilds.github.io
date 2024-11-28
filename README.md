@@ -5,6 +5,7 @@ Welcome to my portfolio website! 🎉 This project showcases my skills and proje
 ## 🛠 Features
 - **Dynamic Activity Timeline**: Powered by the GitHub API, the Activity Timeline highlights the most recent commits from my repositories, updating in real-time to reflect my latest work.
 - **Dark Mode Toggle**: Seamless light/dark mode switching, with shades of white and grey for light mode and darker tones for dark mode. User preferences are saved for a consistent experience.
+- **Dynamic Project Management**: Projects are stored and displayed dynamically using JSON. This improves project management and will later include filtering options to organize and showcase projects more efficiently.
 - **Interactive Popups**: Custom SweetAlert2 alerts for a polished and professional touch to user interactions.
 - **Live Contact Form**: Functional contact form via Formspree, with plans for migration to Google Sheets for improved data handling.
 - **Minimalist UI Design**: A sleek and modern design using subtle shades of grey and white, emphasizing simplicity and functionality.
