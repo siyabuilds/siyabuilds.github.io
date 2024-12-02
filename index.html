@@ -177,7 +177,20 @@
       </div>
     </section>
     <section id="projects" class="projects">
-      <h2>Projects</h2>
+      <div class="projects-header">
+        <h2>Projects</h2>
+        <select name="filter-dropdown" id="filter-dropdown">
+          <option value="All">All</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="TypeScript">TypeScript</option>
+          <option value="React">React</option>
+          <option value="API">API</option>
+          <option value="SweetAlert2">SweetAlert2</option>
+          <option value="OOP">OOP</option>
+          <option value="typed.js">typed.js</option>
+        </select>
+      </div>
+      <div class="spinner"></div>
       <div class="projects-container"></div>
     </section>
     <section class="activity-timeline">

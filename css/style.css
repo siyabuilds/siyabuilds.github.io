@@ -919,3 +919,43 @@ footer a:hover {
     justify-content: center;
   }
 }
+
+.spinner {
+  display: none;
+  margin: 20px auto;
+  border: 4px solid var(--primary-color);
+  border-top: 4px solid #1d72b8;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#filter-dropdown {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  border-radius: 5px;
+  background-color: var(--primary-bg);
+  font-size: 16px;
+}
+
+.projects-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 60%;
+  margin-left: 20%;
+  margin-right: 20%;
+}

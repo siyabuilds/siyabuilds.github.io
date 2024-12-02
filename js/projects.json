@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Portfolio Website - This Site",
     "description": "A personal portfolio to showcase my web development projects.",
-    "technologies": ["HTML", "CSS", "JavaScript"],
+    "technologies": ["HTML", "CSS", "JavaScript", "API", "SweetAlert2"],
     "link": "https://www.markuptitan.site/",
     "repo": "https://github.com/markuptitan/markuptitan.github.io",
     "image": "/images/portfolio-website.png"
