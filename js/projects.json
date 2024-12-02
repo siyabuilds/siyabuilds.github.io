@@ -4,7 +4,7 @@
     "title": "Portfolio Website - This Site",
     "description": "A personal portfolio to showcase my web development projects.",
     "technologies": ["HTML", "CSS", "JavaScript"],
-    "link": "https://markuptitan.github.io",
+    "link": "https://www.markuptitan.site/",
     "repo": "https://github.com/markuptitan/markuptitan.github.io",
     "image": "/images/portfolio-website.png"
   },
@@ -13,7 +13,7 @@
     "title": "Random Quotes Generator",
     "description": "A web app that fetches random quotes using an API.",
     "technologies": ["JavaScript", "API"],
-    "link": "https://markuptitan.github.io/random_quotes_generator",
+    "link": "https://random-quotes.markuptitan.site/",
     "repo": "https://github.com/markuptitan/random_quotes_generator",
     "image": "/images/random-quoutes.png"
   },
@@ -31,8 +31,26 @@
     "title": "React Counter - Basic Intro",
     "description": "A simple counter app to practice React fundamentals.",
     "technologies": ["React", "JavaScript"],
-    "link": "https://markuptitan.github.io/react-counter/",
+    "link": "https://react-counter.markuptitan.site/",
     "repo": "https://github.com/markuptitan/react-counter",
     "image": "/images/react-counter.png"
+  },
+  {
+    "id": 5,
+    "title": "Person Extended",
+    "description": "Simple person class that generates a greeting and interests sentence.",
+    "technologies": ["JavaScript", "OOP", "typed.js"],
+    "link": "https://person-extended.markuptitan.site/",
+    "repo": "https://github.com/markuptitan/person-extended",
+    "image": "/images/person_extended.png"
+  },
+  {
+    "id": 6,
+    "title": "Password Generator",
+    "description": "A tool to generate random passwords with customizable character sets.",
+    "technologies": ["JavaScript", "APIs", "SweetAlert2"],
+    "link": "https://password-gen.markuptitan.site/",
+    "repo": "https://github.com/markuptitan/random_password_generator",
+    "image": "/images/password_gen.png"
   }
 ]
