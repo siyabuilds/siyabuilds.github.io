@@ -48,7 +48,7 @@
     "id": 6,
     "title": "Password Generator",
     "description": "A tool to generate random passwords with customizable character sets.",
-    "technologies": ["JavaScript", "APIs", "SweetAlert2"],
+    "technologies": ["JavaScript", "API", "SweetAlert2"],
     "link": "https://password-gen.markuptitan.site/",
     "repo": "https://github.com/markuptitan/random_password_generator",
     "image": "/images/password_gen.png"
