@@ -23,11 +23,6 @@ const monthNames = [
   "December",
 ];
 
-const currentDate = new Date();
-const month = monthNames[currentDate.getUTCMonth()];
-const year = currentDate.getFullYear();
-document.getElementById("current-date").innerText = `${month} ${year}`;
-
 function showAlert() {
   Swal.fire({
     title: "Projects section not built yet",
