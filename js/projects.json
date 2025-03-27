@@ -50,7 +50,7 @@
     "description": "A tool to generate random passwords with customizable character sets.",
     "technologies": ["JavaScript", "API", "SweetAlert2"],
     "link": "https://password-gen.markuptitan.site/",
-    "repo": "https://github.com/markuptitan/random_password_generator",
+    "repo": "https://github.com/markuptitan/random_password_gen",
     "image": "/images/password_gen.png"
   }
 ]
