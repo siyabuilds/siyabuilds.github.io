@@ -1,13 +1,14 @@
 {
   "name": "markuptitan.github.io",
   "version": "1.0.2",
-  "description": "This portfolio is my next big release which uses a couple of impressive features I wrote about in the README.md",
+  "description": "A modern, responsive portfolio website built with Vite, modular JavaScript, and SCSS. Features include dark/light theme toggle, project filtering, GitHub activity integration, and optimized build pipeline.",
   "main": "index.html",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "npm run dev"
+    "start": "npm run dev",
+    "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",

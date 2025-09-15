@@ -10,7 +10,7 @@ export const initProjects = async () => {
   const hideSpinner = () => (spinner.style.display = "none");
 
   try {
-    const response = await fetch("/js/projects.json");
+    const response = await fetch("/projects.json");
     const projects = await response.json();
     
     renderProjects(projects);
