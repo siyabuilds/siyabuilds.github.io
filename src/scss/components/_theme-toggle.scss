@@ -1,0 +1,45 @@
+// Theme toggle styles
+#theme-toggle-btn {
+  background: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+
+  &:hover {
+    transform: scale(1.2);
+    outline: none;
+  }
+}
+
+#theme-icon {
+  font-size: 2rem;
+  transition: transform var(--transition-slow);
+
+  [data-theme="light"] & {
+    color: #ffcc00;
+  }
+
+  [data-theme="dark"] & {
+    color: #f4f4f4;
+  }
+}
+
+// SweetAlert2 theme styles
+.swal2-popup {
+  background: var(--primary-bg);
+  color: var(--primary-color);
+  transition: all var(--transition-slow);
+}
+
+.swal2-confirm,
+.swal2-cancel {
+  background: var(--main-bg);
+  color: var(--primary-color);
+  transition: all var(--transition-slow);
+
+  &:hover {
+    color: var(--primary-color);
+    background: var(--span-bgs-hover);
+  }
+}

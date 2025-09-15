@@ -1,0 +1,75 @@
+// About section styles
+.about-section {
+  background-color: var(--main-bg);
+  padding: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+}
+
+.inner-container {
+  background-color: var(--cards-bg);
+  padding: 75px;
+  max-width: 55%;
+  border-radius: var(--border-radius-lg);
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    color: var(--primary-color);
+  }
+}
+
+.text {
+  font-size: var(--font-size-base);
+  color: var(--primary-color);
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-weight: 700;
+  font-size: var(--font-size-base);
+  justify-content: center;
+  padding: 20px 0;
+
+  span {
+    background-color: var(--span-bgs);
+    padding: 10px 20px;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-lg);
+    color: var(--primary-color);
+    transition: background-color var(--transition-normal), transform var(--transition-normal);
+
+    &:hover {
+      background-color: var(--span-bgs-hover);
+      transform: translateY(-5px) scale(1.05);
+    }
+  }
+}
+
+// Responsive design
+@media screen and (max-width: 600px) {
+  .about-section {
+    flex-direction: column;
+    padding: 60px;
+    text-align: center;
+  }
+  
+  .inner-container {
+    max-width: 100%;
+    padding: 30px;
+  }
+}

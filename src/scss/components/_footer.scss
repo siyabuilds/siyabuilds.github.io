@@ -1,0 +1,22 @@
+// Footer styles
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: var(--primary-bg);
+  color: var(--primary-color);
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: var(--primary-color);
+    margin-left: 0.5rem;
+    text-decoration: none;
+    transition: color var(--transition-normal);
+
+    &:hover {
+      color: var(--span-bgs-hover);
+    }
+  }
+}

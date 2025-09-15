@@ -6,7 +6,7 @@
     "technologies": ["HTML", "CSS", "JavaScript", "API", "SweetAlert2"],
     "link": "https://www.markuptitan.site/",
     "repo": "https://github.com/markuptitan/markuptitan.github.io",
-    "image": "/images/portfolio-website.png"
+    "image": "/portfolio-website.png"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "technologies": ["JavaScript", "API"],
     "link": "https://random-quotes.markuptitan.site/",
     "repo": "https://github.com/markuptitan/random_quotes_generator",
-    "image": "/images/random-quoutes.png"
+    "image": "/random-quoutes.png"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "technologies": ["TypeScript"],
     "link": "https://github.com/markuptitan/typescript-mastery",
     "repo": "https://github.com/markuptitan/typescript-mastery",
-    "image": "/images/typescript-mastery.png"
+    "image": "/typescript-mastery.png"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "technologies": ["React", "JavaScript"],
     "link": "https://react-counter.markuptitan.site/",
     "repo": "https://github.com/markuptitan/react-counter",
-    "image": "/images/react-counter.png"
+    "image": "/react-counter.png"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "technologies": ["JavaScript", "OOP", "typed.js"],
     "link": "https://person-extended.markuptitan.site/",
     "repo": "https://github.com/markuptitan/person-extended",
-    "image": "/images/person_extended.png"
+    "image": "/person_extended.png"
   },
   {
     "id": 6,
@@ -51,6 +51,6 @@
     "technologies": ["JavaScript", "API", "SweetAlert2"],
     "link": "https://password-gen.markuptitan.site/",
     "repo": "https://github.com/markuptitan/random_password_gen",
-    "image": "/images/password_gen.png"
+    "image": "/password_gen.png"
   }
 ]

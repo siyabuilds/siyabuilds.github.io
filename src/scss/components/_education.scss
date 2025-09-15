@@ -1,0 +1,127 @@
+// Education section styles
+.education {
+  background: var(--main-bg);
+  padding: 60px 20px;
+}
+
+.education-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  h2 {
+    font-size: var(--font-size-4xl);
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+
+.education-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--cards-bg);
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--border-radius-lg);
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow), background-color var(--transition-slow);
+
+  &:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    background-color: var(--span-bgs-hover);
+
+    .date {
+      color: var(--primary-bg);
+    }
+  }
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius-lg);
+    margin-right: 30px;
+  }
+}
+
+.education-details {
+  text-align: left;
+  flex: 1;
+
+  h3 {
+    font-size: var(--font-size-3xl);
+    margin-bottom: 15px;
+    color: var(--primary-color);
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 10px;
+    color: var(--primary-color);
+
+    li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+      font-size: var(--font-size-base);
+      transition: all var(--transition-slow);
+
+      &::before {
+        content: ">> ";
+        font-size: var(--font-size-base);
+        color: #4c6e91;
+        position: relative;
+        left: 0;
+        top: 0;
+        transition: all var(--transition-slow);
+      }
+
+      &:hover {
+        color: var(--main-bg);
+        background: var(--primary-color);
+        border-radius: var(--border-radius-sm);
+        padding: 10px 30px;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  p {
+    font-size: var(--font-size-base);
+    color: #aaaaaa;
+    transition: all var(--transition-slow);
+  }
+}
+
+// Responsive design
+@media screen and (max-width: 768px) {
+  .education-item {
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      margin-bottom: 20px;
+    }
+  }
+
+  .education-details {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .education h2 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .education-details {
+    h3 {
+      font-size: var(--font-size-2xl);
+    }
+
+    p {
+      font-size: var(--font-size-sm);
+    }
+  }
+}

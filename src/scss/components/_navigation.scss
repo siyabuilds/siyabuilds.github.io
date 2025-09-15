@@ -1,0 +1,118 @@
+// Navigation styles
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav {
+  background-color: var(--primary-bg);
+  box-shadow: var(--shadow-sm);
+
+  ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  li {
+    height: 50px;
+
+    &:first-child {
+      margin-right: auto;
+      font-size: 25px;
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    transition: background-color var(--transition-normal);
+
+    &:hover {
+      background-color: var(--span-bgs-hover);
+      text-decoration: none;
+    }
+  }
+}
+
+// Sidebar styles
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  backdrop-filter: blur(0px);
+  background-color: var(--cards-bg);
+  box-shadow: -10px 0 15px rgba(0, 0, 0, 0.3);
+  visibility: hidden;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity var(--transition-slower), transform var(--transition-slower), visibility var(--transition-slower);
+
+  &.show {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    transition: opacity var(--transition-slower), transform var(--transition-slower);
+  }
+
+  li {
+    width: 100%;
+  }
+
+  a {
+    width: 100%;
+    color: var(--primary-color);
+  }
+}
+
+.menuButton {
+  display: none;
+  fill: var(--primary-color);
+}
+
+.flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+
+// Responsive design
+@media (max-width: 800px) {
+  .hideOnMobile {
+    display: none;
+  }
+  
+  .menuButton {
+    display: block;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+  }
+  
+  .menuButton {
+    display: block;
+  }
+}
