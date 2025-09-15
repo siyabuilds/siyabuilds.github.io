@@ -1,6 +1,6 @@
 // GitHub activity timeline functionality
 export const initActivityTimeline = async () => {
-  const userName = "markuptitan";
+  const userName = "siyabuilds";
   const repoCardsContainer = document.getElementById("repo-cards");
   const activityTimeline = document.querySelector(".activity-timeline");
 
