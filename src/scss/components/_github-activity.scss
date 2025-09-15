@@ -1,0 +1,124 @@
+// GitHub activity timeline styles
+.activity-timeline {
+  display: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 40px 20px;
+  background: var(--main-bg);
+  margin: 0 auto;
+  color: var(--primary-color);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+    font-size: var(--font-size-4xl);
+  }
+}
+
+.repo-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  max-width: 800px;
+}
+
+.repo-card {
+  background: var(--cards-bg);
+  padding: 20px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 350px;
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.repo-title {
+  font-size: var(--font-size-2xl);
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.timeline {
+  position: relative;
+  border-left: 2px solid var(--primary-color);
+  padding-left: 30px;
+  margin-top: 20px;
+}
+
+.event {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.event-marker {
+  position: absolute;
+  top: 0;
+  left: -37px;
+  width: 10px;
+  height: 10px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+}
+
+.event-content {
+  border-radius: var(--border-radius-lg);
+  color: var(--primary-color);
+  background-color: var(--span-bgs);
+  padding: 15px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-fast);
+
+  &:hover {
+    background-color: var(--span-bgs-hover);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.commit-message {
+  font-size: var(--font-size-sm);
+  color: var(--primary-color);
+  margin: 5px 0;
+
+  span {
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+
+  &.dimmed {
+    color: var(--primary-dimmed-color);
+
+    span {
+      color: #666;
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .event-marker {
+    left: -36px;
+  }
+  
+  .repo-cards {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .activity-timeline h2 {
+    font-size: var(--font-size-3xl);
+  }
+}

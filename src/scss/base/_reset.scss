@@ -1,0 +1,18 @@
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all var(--transition-normal);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  padding-top: 30px;
+  background-color: var(--main-bg);
+  color: var(--primary-color);
+}

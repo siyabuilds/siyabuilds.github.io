@@ -1,0 +1,20 @@
+// Spinner component styles
+.spinner {
+  display: none;
+  margin: 20px auto;
+  border: 4px solid var(--primary-color);
+  border-top: 4px solid #1d72b8;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

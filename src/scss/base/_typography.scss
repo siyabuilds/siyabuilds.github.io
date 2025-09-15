@@ -1,0 +1,21 @@
+// Typography
+body {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color var(--transition-normal), text-decoration var(--transition-normal);
+
+  &:hover {
+    color: #1d72b8;
+    text-decoration: underline;
+  }
+}
+
+button a {
+  color: var(--primary-color);
+}
