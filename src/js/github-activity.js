@@ -9,33 +9,43 @@ export const initActivityTimeline = async () => {
   activityTimeline.style.display = "none";
 
   try {
-    const reposResponse = await fetch(`https://api.github.com/users/${userName}/repos`);
+    const reposResponse = await fetch(
+      `https://api.github.com/users/${userName}/repos`
+    );
     let repos = await reposResponse.json();
 
     if (!Array.isArray(repos)) {
-      console.warn('GitHub API returned unexpected data format');
+      console.warn("GitHub API returned unexpected data format");
       return;
     }
 
-    // Filter out forks and sort by last updated
-    repos = repos.filter(repo => !repo.fork);
+    // Filter out forks, specific repositories, and sort by last updated
+    const excludedRepos = [
+      "siyabuilds",
+      "siyabuilds.github.io",
+      "carbon-footprint-logger",
+    ];
+    repos = repos.filter(
+      (repo) => !repo.fork && !excludedRepos.includes(repo.name)
+    );
     repos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
 
-    let topRepos = repos.slice(0, 6); // Show more repos for better selection
+    let topRepos = repos.slice(0, 6); // Get 6 repos after filtering exclusions
     let validRepos = [];
 
     for (const repo of topRepos) {
       const commits = await fetchCommits(repo.name, userName);
-      if (commits.length >= 1) { // Reduced requirement to show more repos
+      if (commits.length >= 1) {
+        // Reduced requirement to show more repos
         validRepos.push({ repo, commits });
       }
     }
 
-    // Fill remaining slots if needed
-    if (validRepos.length < 4) {
+    // Fill remaining slots if needed - ensure we get 6 repos total
+    if (validRepos.length < 6) {
       const remainingRepos = repos.slice(6);
       for (const repo of remainingRepos) {
-        if (validRepos.length >= 4) break;
+        if (validRepos.length >= 6) break;
         const commits = await fetchCommits(repo.name, userName);
         if (commits.length >= 1) {
           validRepos.push({ repo, commits });
@@ -47,12 +57,12 @@ export const initActivityTimeline = async () => {
       activityTimeline.style.display = "flex";
     }
 
-    validRepos.slice(0, 4).forEach(({ repo, commits }) => {
+    validRepos.slice(0, 6).forEach(({ repo, commits }) => {
       const repoCard = createRepoCard(repo, commits);
       repoCardsContainer.appendChild(repoCard);
     });
   } catch (error) {
-    console.error('Error fetching repository data:', error);
+    console.error("Error fetching repository data:", error);
   }
 };
 
@@ -95,10 +105,10 @@ const createRepoCard = (repo, commits) => {
 
     const commitDate = new Date(commit.commit.author.date);
     const timeAgo = getTimeAgo(commitDate);
-    
+
     // Extract commit hash (first 7 characters)
     const commitHash = commit.sha.substring(0, 7);
-    
+
     commitMessage.innerHTML = `
       <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
         <span class="commit-hash">${commitHash}</span>
@@ -119,7 +129,7 @@ const createRepoCard = (repo, commits) => {
   // Repository stats
   const stats = document.createElement("div");
   stats.classList.add("repo-stats");
-  
+
   if (repo.language) {
     const langStat = document.createElement("span");
     langStat.classList.add("stat", "language");
@@ -159,11 +169,11 @@ const createRepoCard = (repo, commits) => {
     font-weight: 500;
     transition: background-color var(--transition-fast);
   `;
-  link.addEventListener('mouseenter', () => {
-    link.style.backgroundColor = 'var(--accent-hover)';
+  link.addEventListener("mouseenter", () => {
+    link.style.backgroundColor = "var(--accent-hover)";
   });
-  link.addEventListener('mouseleave', () => {
-    link.style.backgroundColor = 'var(--accent-color)';
+  link.addEventListener("mouseleave", () => {
+    link.style.backgroundColor = "var(--accent-color)";
   });
 
   card.appendChild(link);
@@ -193,10 +203,10 @@ const getTimeAgo = (date) => {
   const diffMinutes = Math.floor(diffMs / (1000 * 60));
 
   if (diffDays > 30) {
-    return date.toLocaleDateString('en-GB', { 
-      day: 'numeric', 
-      month: 'short', 
-      year: 'numeric' 
+    return date.toLocaleDateString("en-GB", {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
     });
   } else if (diffDays > 0) {
     return `${diffDays}d ago`;
@@ -205,11 +215,11 @@ const getTimeAgo = (date) => {
   } else if (diffMinutes > 0) {
     return `${diffMinutes}m ago`;
   } else {
-    return 'just now';
+    return "just now";
   }
 };
 
 const truncateMessage = (message, maxLength) => {
   if (message.length <= maxLength) return message;
-  return message.substring(0, maxLength).trim() + '...';
+  return message.substring(0, maxLength).trim() + "...";
 };
