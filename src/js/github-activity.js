@@ -1,4 +1,17 @@
 // GitHub activity timeline functionality - Modern Implementation
+
+// Language color mapping
+const languageMap = {
+  JavaScript: "#f1e05a",
+  TypeScript: "#3178c6",
+  HTML: "#e34c26",
+  CSS: "#1572B6",
+  SCSS: "#c6538c",
+  Dockerfile: "#384d54",
+  SQL: "#e38c00",
+  Shell: "#89e051",
+};
+
 export const initActivityTimeline = async () => {
   const userName = "siyabuilds";
   const repoCardsContainer = document.getElementById("repo-cards");
@@ -133,7 +146,8 @@ const createRepoCard = (repo, commits) => {
   if (repo.language) {
     const langStat = document.createElement("span");
     langStat.classList.add("stat", "language");
-    langStat.innerHTML = `<span style="color: var(--accent-color);">●</span> ${repo.language}`;
+    const languageColor = languageMap[repo.language] || "#6e7681"; // Default color if language not found
+    langStat.innerHTML = `<span style="color: ${languageColor};">●</span> ${repo.language}`;
     stats.appendChild(langStat);
   }
 
