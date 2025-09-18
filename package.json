@@ -1,6 +1,6 @@
 {
-  "name": "markuptitan.github.io",
-  "version": "1.0.2",
+  "name": "siyabuilds.github.io",
+  "version": "1.0.3",
   "description": "A modern, responsive portfolio website built with Vite, modular JavaScript, and SCSS. Features include dark/light theme toggle, project filtering, GitHub activity integration, and optimized build pipeline.",
   "main": "index.html",
   "scripts": {
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@git://github.com:markuptitan/markuptitan.github.io"
+    "url": "git+https://github.com/siyabuilds/siyabuilds.github.io.git"
   },
   "author": {
     "name": "Siyabonga Samson Lukhele",
     "email": "samsonlukhele76@gmail.com",
-    "website": "markuptitan.github.io"
+    "website": "https://siyabuilds.github.io"
   },
   "license": "MIT",
   "dependencies": {

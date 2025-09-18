@@ -1,7 +1,7 @@
 # Portfolio Development Guide
 
 ## Overview
-This portfolio has been modernized with Vite build system and modular architecture for better development experience and maintainability.
+This portfolio has been modernized with Vite build system, SCSS with modern @use syntax, and modular architecture for better development experience and maintainability. The design follows GitHub's color scheme and modern web standards.
 
 ## Development Setup
 
@@ -36,6 +36,12 @@ npm run preview
 ```
 Serves the production build locally for testing.
 
+#### Clean Build Directory
+```bash
+npm run clean
+```
+Removes the `dist/` directory.
+
 ## Project Structure
 
 ```
@@ -56,6 +62,8 @@ Serves the production build locally for testing.
 │   ├── documents/           # CV and documents
 │   ├── *.png               # Images and logos
 │   └── projects.json       # Projects data
+├── .github/
+│   └── workflows/           # GitHub Actions for deployment
 ├── dist/                    # Production build output
 ├── index.html              # Main HTML file
 ├── vite.config.js          # Vite configuration
@@ -66,24 +74,34 @@ Serves the production build locally for testing.
 
 ### Modular Architecture
 - **JavaScript**: Split into feature-specific modules for better maintainability
-- **SCSS**: Organized into base, components, and layout directories
-- **CSS Custom Properties**: Consistent theming and easy customization
+- **SCSS**: Organized into base, components, and layout directories with modern @use syntax
+- **CSS Custom Properties**: GitHub-inspired color scheme with consistent theming
 
 ### Modern Build System
 - **Vite**: Fast development server with hot module reloading
 - **ES Modules**: Modern JavaScript module system
-- **SCSS**: Enhanced CSS with variables, nesting, and mixins
+- **SCSS**: Enhanced CSS with variables, nesting, and mixins using modern @use syntax
 - **Local Dependencies**: FontAwesome and SweetAlert2 bundled locally
+
+### GitHub Integration
+- **Real-time Activity**: Dynamic repository showcase with commit history
+- **Repository Stats**: Language statistics, star counts, and update timestamps
+- **Modern UI**: Card-based layout with GitHub-inspired design
 
 ### Enhanced Animations
 - Smooth transitions using CSS custom properties
-- Improved hover effects and transforms
+- GitHub-style hover effects and transforms
 - Better loading animations and spinners
 
 ### Responsive Design
 - Mobile-first approach
 - Flexible grid layouts
 - Optimized for all screen sizes
+
+### Automated Deployment
+- **GitHub Actions**: Automatic builds on push to main/master
+- **GitHub Pages**: Seamless deployment to GitHub Pages
+- **Build Optimization**: Minified CSS/JS and asset optimization
 
 ## Development Workflow
 
@@ -111,12 +129,47 @@ Serves the production build locally for testing.
 - Images should be placed in `public/` directory
 - Projects are automatically filtered and displayed
 
+### Updating GitHub Information
+- The GitHub integration automatically fetches data from the `siyabuilds` account
+- Repository information, commit history, and stats are updated in real-time
+- No manual configuration needed for new repositories
+
+## Deployment
+
+### Automated Deployment
+The portfolio uses GitHub Actions for automated deployment:
+
+1. **Trigger**: Pushes to `main` or `master` branch automatically trigger deployment
+2. **Build Process**: 
+   - Installs Node.js and dependencies
+   - Runs `npm run build` to create production assets
+   - Optimizes and minifies all assets
+3. **Deploy**: Automatically deploys to GitHub Pages
+4. **Access**: Live site available at `https://siyabuilds.github.io`
+
+### Manual Deployment
+If needed, you can deploy manually:
+
+```bash
+# Build the project
+npm run build
+
+# The dist/ directory contains all deployment files
+# Upload contents to your hosting provider
+```
+
+### GitHub Pages Configuration
+The repository should have GitHub Pages enabled:
+- Source: GitHub Actions
+- Custom domain (optional): Configure in repository settings
+
 ## Build Optimization
 
 The production build includes:
 - CSS and JavaScript minification
 - Asset optimization and compression
 - FontAwesome fonts bundled locally
+- Modern SCSS compilation with @use syntax
 - Gzip compression analysis
 - Source maps for debugging
 
@@ -129,3 +182,4 @@ The production build includes:
 - Optimized bundle sizes (CSS: ~35KB gzipped, JS: ~23KB gzipped)
 - Local fonts and dependencies for faster loading
 - Efficient code splitting and tree shaking
+- GitHub-inspired color scheme for better accessibility
