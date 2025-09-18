@@ -1,17 +1,17 @@
-// Main SCSS entry point
-@import 'base/variables';
-@import 'base/reset';
-@import 'base/typography';
+// Main SCSS entry point - Modern @use syntax
+@use 'base/variables';
+@use 'base/reset';
+@use 'base/typography';
 
-@import 'components/navigation';
-@import 'components/theme-toggle';
-@import 'components/about';
-@import 'components/education';
-@import 'components/skills';
-@import 'components/projects';
-@import 'components/contact';
-@import 'components/footer';
-@import 'components/github-activity';
-@import 'components/spinner';
+@use 'components/navigation';
+@use 'components/theme-toggle';
+@use 'components/about';
+@use 'components/education';
+@use 'components/skills';
+@use 'components/projects';
+@use 'components/contact';
+@use 'components/footer';
+@use 'components/github-activity';
+@use 'components/spinner';
 
-@import 'layout/sections';
+@use 'layout/sections';

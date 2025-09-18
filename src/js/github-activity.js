@@ -1,4 +1,4 @@
-// GitHub activity timeline functionality
+// GitHub activity timeline functionality - Modern Implementation
 export const initActivityTimeline = async () => {
   const userName = "siyabuilds";
   const repoCardsContainer = document.getElementById("repo-cards");
@@ -17,36 +17,37 @@ export const initActivityTimeline = async () => {
       return;
     }
 
+    // Filter out forks and sort by last updated
+    repos = repos.filter(repo => !repo.fork);
     repos.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
 
-    let topRepos = repos.slice(0, 4);
+    let topRepos = repos.slice(0, 6); // Show more repos for better selection
     let validRepos = [];
 
     for (const repo of topRepos) {
       const commits = await fetchCommits(repo.name, userName);
-      if (commits.length >= 2) {
+      if (commits.length >= 1) { // Reduced requirement to show more repos
         validRepos.push({ repo, commits });
       }
     }
 
-    let index = 4 - validRepos.length;
-
-    if (index > 0) {
-      const remainingRepos = repos.slice(4);
+    // Fill remaining slots if needed
+    if (validRepos.length < 4) {
+      const remainingRepos = repos.slice(6);
       for (const repo of remainingRepos) {
         if (validRepos.length >= 4) break;
         const commits = await fetchCommits(repo.name, userName);
-        if (commits.length >= 2) {
+        if (commits.length >= 1) {
           validRepos.push({ repo, commits });
         }
       }
     }
 
-    if (validRepos.length > 1) {
+    if (validRepos.length > 0) {
       activityTimeline.style.display = "flex";
     }
 
-    validRepos.forEach(({ repo, commits }) => {
+    validRepos.slice(0, 4).forEach(({ repo, commits }) => {
       const repoCard = createRepoCard(repo, commits);
       repoCardsContainer.appendChild(repoCard);
     });
@@ -59,59 +60,113 @@ const createRepoCard = (repo, commits) => {
   const card = document.createElement("div");
   card.classList.add("repo-card");
 
+  // Repository title
   const title = document.createElement("h3");
   title.classList.add("repo-title");
   title.textContent = repo.name;
   card.appendChild(title);
 
-  const timeline = document.createElement("div");
-  timeline.classList.add("timeline");
+  // Repository description
+  if (repo.description) {
+    const description = document.createElement("p");
+    description.style.color = "var(--primary-dimmed-color)";
+    description.style.fontSize = "var(--font-size-sm)";
+    description.style.marginBottom = "16px";
+    description.style.lineHeight = "1.5";
+    description.textContent = repo.description;
+    card.appendChild(description);
+  }
+
+  // Modern activity feed instead of timeline
+  const activityFeed = document.createElement("div");
+  activityFeed.classList.add("activity-feed");
 
   commits.sort(
     (a, b) => new Date(b.commit.author.date) - new Date(a.commit.author.date)
   );
 
-  commits.slice(0, 2).forEach((commit, index) => {
-    const event = document.createElement("div");
-    event.classList.add("event");
+  commits.slice(0, 3).forEach((commit, index) => {
+    const activityItem = document.createElement("div");
+    activityItem.classList.add("activity-item");
+    if (index > 0) activityItem.classList.add("dimmed");
 
-    const eventMarker = document.createElement("div");
-    eventMarker.classList.add("event-marker");
-    event.appendChild(eventMarker);
-
-    const eventContent = document.createElement("div");
-    eventContent.classList.add("event-content");
-
-    const commitMessage = document.createElement("p");
+    const commitMessage = document.createElement("div");
     commitMessage.classList.add("commit-message");
-    if (index === 1) commitMessage.classList.add("dimmed");
 
-    commitMessage.innerHTML = `${new Date(
-      commit.commit.author.date
-    ).toLocaleString("en-GB", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: true,
-    })}: <br /> 
-    <span>${commit.commit.message}</span>`;
+    const commitDate = new Date(commit.commit.author.date);
+    const timeAgo = getTimeAgo(commitDate);
+    
+    // Extract commit hash (first 7 characters)
+    const commitHash = commit.sha.substring(0, 7);
+    
+    commitMessage.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+        <span class="commit-hash">${commitHash}</span>
+        <span class="commit-date">${timeAgo}</span>
+      </div>
+      <div style="margin-bottom: 4px;">
+        ${truncateMessage(commit.commit.message, 80)}
+      </div>
+      <div class="commit-author">by ${commit.commit.author.name}</div>
+    `;
 
-    eventContent.appendChild(commitMessage);
-    event.appendChild(eventContent);
-    timeline.appendChild(event);
+    activityItem.appendChild(commitMessage);
+    activityFeed.appendChild(activityItem);
   });
 
-  card.appendChild(timeline);
+  card.appendChild(activityFeed);
 
-  const button = document.createElement("button");
-  const repoLink = document.createElement("a");
-  repoLink.href = repo.html_url;
-  repoLink.target = "_blank";
-  repoLink.textContent = "View Repository";
-  button.appendChild(repoLink);
-  card.appendChild(button);
+  // Repository stats
+  const stats = document.createElement("div");
+  stats.classList.add("repo-stats");
+  
+  if (repo.language) {
+    const langStat = document.createElement("span");
+    langStat.classList.add("stat", "language");
+    langStat.innerHTML = `<span style="color: var(--accent-color);">●</span> ${repo.language}`;
+    stats.appendChild(langStat);
+  }
+
+  const updatedStat = document.createElement("span");
+  updatedStat.classList.add("stat", "updated");
+  updatedStat.textContent = `Updated ${getTimeAgo(new Date(repo.pushed_at))}`;
+  stats.appendChild(updatedStat);
+
+  if (repo.stargazers_count > 0) {
+    const starsStat = document.createElement("span");
+    starsStat.classList.add("stat");
+    starsStat.innerHTML = `⭐ ${repo.stargazers_count}`;
+    stats.appendChild(starsStat);
+  }
+
+  card.appendChild(stats);
+
+  // View repository link
+  const link = document.createElement("a");
+  link.href = repo.html_url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = "View Repository →";
+  link.style.cssText = `
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    transition: background-color var(--transition-fast);
+  `;
+  link.addEventListener('mouseenter', () => {
+    link.style.backgroundColor = 'var(--accent-hover)';
+  });
+  link.addEventListener('mouseleave', () => {
+    link.style.backgroundColor = 'var(--accent-color)';
+  });
+
+  card.appendChild(link);
 
   return card;
 };
@@ -119,7 +174,7 @@ const createRepoCard = (repo, commits) => {
 const fetchCommits = async (repoName, userName) => {
   try {
     const commitsResponse = await fetch(
-      `https://api.github.com/repos/${userName}/${repoName}/commits`
+      `https://api.github.com/repos/${userName}/${repoName}/commits?per_page=10`
     );
     const commits = await commitsResponse.json();
     return Array.isArray(commits) ? commits : [];
@@ -127,4 +182,34 @@ const fetchCommits = async (repoName, userName) => {
     console.error(`Error fetching commits for ${repoName}:`, error);
     return [];
   }
+};
+
+// Utility functions
+const getTimeAgo = (date) => {
+  const now = new Date();
+  const diffMs = now - date;
+  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+  const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+  const diffMinutes = Math.floor(diffMs / (1000 * 60));
+
+  if (diffDays > 30) {
+    return date.toLocaleDateString('en-GB', { 
+      day: 'numeric', 
+      month: 'short', 
+      year: 'numeric' 
+    });
+  } else if (diffDays > 0) {
+    return `${diffDays}d ago`;
+  } else if (diffHours > 0) {
+    return `${diffHours}h ago`;
+  } else if (diffMinutes > 0) {
+    return `${diffMinutes}m ago`;
+  } else {
+    return 'just now';
+  }
+};
+
+const truncateMessage = (message, maxLength) => {
+  if (message.length <= maxLength) return message;
+  return message.substring(0, maxLength).trim() + '...';
 };

@@ -1,23 +1,35 @@
-// CSS Custom Properties and Variables
+// CSS Custom Properties and Variables - GitHub Theme
 :root {
-  // Colors
-  --primary-color: #2c2c22;
-  --primary-dimmed-color: #555;
-  --primary-bg: #f5f5f5;
-  --main-bg: #dcdcdc;
-  --cards-bg: #cccccc;
-  --span-bgs: #bbbbbb;
-  --span-bgs-hover: #aaaaaa;
+  // GitHub Light Theme Colors
+  --primary-color: #24292f;
+  --primary-dimmed-color: #656d76;
+  --primary-bg: #ffffff;
+  --main-bg: #f6f8fa;
+  --cards-bg: #ffffff;
+  --span-bgs: #f6f8fa;
+  --span-bgs-hover: #eaeef2;
+  --accent-color: #0969da;
+  --accent-hover: #0860ca;
+  --border-color: #d0d7de;
+  --success-color: #1a7f37;
+  --warning-color: #bf8700;
+  --danger-color: #cf222e;
   
-  // Dark theme
+  // Dark theme - GitHub Dark
   &[data-theme="dark"] {
-    --primary-bg: #1a1a1a;
-    --main-bg: #333333;
-    --primary-color: #f9f9f9;
-    --primary-dimmed-color: #ddd;
-    --cards-bg: #2b2b2b;
-    --span-bgs: #444444;
-    --span-bgs-hover: #555555;
+    --primary-bg: #0d1117;
+    --main-bg: #010409;
+    --primary-color: #f0f6fc;
+    --primary-dimmed-color: #8b949e;
+    --cards-bg: #161b22;
+    --span-bgs: #21262d;
+    --span-bgs-hover: #30363d;
+    --accent-color: #2f81f7;
+    --accent-hover: #388bfd;
+    --border-color: #30363d;
+    --success-color: #3fb950;
+    --warning-color: #d29922;
+    --danger-color: #f85149;
   }
 
   // Spacing

@@ -1,6 +1,6 @@
-// GitHub activity timeline styles
+// GitHub activity timeline styles - Modern Card Layout
 .activity-timeline {
-  display: center;
+  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
@@ -15,110 +15,189 @@
     margin-bottom: 40px;
     color: var(--primary-color);
     font-size: var(--font-size-4xl);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    
+    &::before {
+      content: "🚀";
+      font-size: 1.2em;
+    }
   }
 }
 
 .repo-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  max-width: 800px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .repo-card {
   background: var(--cards-bg);
-  padding: 20px;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-md);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
-  max-width: 350px;
-  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), var(--success-color));
+  }
 
   &:hover {
-    transform: scale(1.05);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color);
   }
 }
 
 .repo-title {
-  font-size: var(--font-size-2xl);
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  margin-bottom: 16px;
   color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  
+  &::before {
+    content: "📁";
+    font-size: 0.9em;
+  }
 }
 
-.timeline {
-  position: relative;
-  border-left: 2px solid var(--primary-color);
-  padding-left: 30px;
+// Modern Activity Feed instead of timeline
+.activity-feed {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.event {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.event-marker {
-  position: absolute;
-  top: 0;
-  left: -37px;
-  width: 10px;
-  height: 10px;
-  background: var(--primary-color);
-  border-radius: 50%;
-  border: 1.5px solid #fff;
-}
-
-.event-content {
-  border-radius: var(--border-radius-lg);
-  color: var(--primary-color);
-  background-color: var(--span-bgs);
-  padding: 15px;
-  box-shadow: var(--shadow-sm);
+.activity-item {
+  background: var(--span-bgs);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px;
   transition: all var(--transition-fast);
+  position: relative;
 
   &:hover {
-    background-color: var(--span-bgs-hover);
-    transform: scale(1.05);
-    box-shadow: var(--shadow-lg);
+    background: var(--span-bgs-hover);
+    border-color: var(--accent-color);
+    transform: translateX(4px);
+  }
+
+  &::before {
+    content: "•";
+    position: absolute;
+    left: -8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--accent-color);
+    color: white;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
   }
 }
 
 .commit-message {
   font-size: var(--font-size-sm);
   color: var(--primary-color);
-  margin: 5px 0;
+  margin: 8px 0;
+  line-height: 1.5;
 
-  span {
-    font-weight: bold;
+  .commit-hash {
+    font-family: 'SFMono-Regular', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+    background: var(--span-bgs);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    color: var(--accent-color);
+    border: 1px solid var(--border-color);
+  }
+
+  .commit-author {
+    font-weight: 600;
     color: var(--primary-color);
   }
 
-  &.dimmed {
+  .commit-date {
     color: var(--primary-dimmed-color);
+    font-size: 0.9em;
+  }
 
-    span {
-      color: #666;
+  &.dimmed {
+    opacity: 0.7;
+  }
+}
+
+.repo-stats {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  font-size: var(--font-size-sm);
+  
+  .stat {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--primary-dimmed-color);
+    
+    &.language {
+      color: var(--accent-color);
+      font-weight: 500;
+    }
+    
+    &.updated {
+      color: var(--success-color);
     }
   }
 }
 
 // Responsive design
 @media (max-width: 768px) {
-  .event-marker {
-    left: -36px;
-  }
-  
   .repo-cards {
     grid-template-columns: 1fr;
-    justify-content: center;
+    gap: 16px;
   }
 
   .activity-timeline h2 {
     font-size: var(--font-size-3xl);
+    
+    &::before {
+      font-size: 1em;
+    }
+  }
+
+  .repo-card {
+    padding: 20px;
+  }
+  
+  .activity-item {
+    margin-left: 16px;
   }
 }

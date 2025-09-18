@@ -2,55 +2,55 @@
   {
     "id": 1,
     "title": "Portfolio Website - This Site",
-    "description": "A personal portfolio to showcase my web development projects.",
-    "technologies": ["HTML", "CSS", "JavaScript", "API", "SweetAlert2"],
-    "link": "https://www.markuptitan.site/",
-    "repo": "https://github.com/markuptitan/markuptitan.github.io",
+    "description": "A modern, responsive portfolio built with Vite, SCSS, and modular JavaScript architecture.",
+    "technologies": ["Vite", "SCSS", "JavaScript", "GitHub API", "SweetAlert2"],
+    "link": "https://siyabuilds.github.io/",
+    "repo": "https://github.com/siyabuilds/siyabuilds.github.io",
     "image": "/portfolio-website.png"
   },
   {
     "id": 2,
-    "title": "Random Quotes Generator",
-    "description": "A web app that fetches random quotes using an API.",
-    "technologies": ["JavaScript", "API"],
-    "link": "https://random-quotes.markuptitan.site/",
-    "repo": "https://github.com/markuptitan/random_quotes_generator",
-    "image": "/random-quoutes.png"
+    "title": "React Task Manager",
+    "description": "A full-featured task management application with real-time updates and responsive design.",
+    "technologies": ["React", "TypeScript", "Node.js", "MongoDB"],
+    "link": "https://siyabuilds.github.io/react-task-manager/",
+    "repo": "https://github.com/siyabuilds/react-task-manager",
+    "image": "/react-task-manager.png"
   },
   {
     "id": 3,
-    "title": "TypeScript Mastery - Learning Repo",
-    "description": "A collection of TypeScript exercises and examples.",
-    "technologies": ["TypeScript"],
-    "link": "https://github.com/markuptitan/typescript-mastery",
-    "repo": "https://github.com/markuptitan/typescript-mastery",
-    "image": "/typescript-mastery.png"
+    "title": "E-Commerce Platform",
+    "description": "A modern e-commerce solution with payment integration and admin dashboard.",
+    "technologies": ["Next.js", "TypeScript", "Stripe", "PostgreSQL"],
+    "link": "https://siyabuilds.github.io/ecommerce-platform/",
+    "repo": "https://github.com/siyabuilds/ecommerce-platform",
+    "image": "/ecommerce-platform.png"
   },
   {
     "id": 4,
-    "title": "React Counter - Basic Intro",
-    "description": "A simple counter app to practice React fundamentals.",
-    "technologies": ["React", "JavaScript"],
-    "link": "https://react-counter.markuptitan.site/",
-    "repo": "https://github.com/markuptitan/react-counter",
-    "image": "/react-counter.png"
+    "title": "Weather Dashboard",
+    "description": "Real-time weather monitoring with interactive charts and location-based forecasts.",
+    "technologies": ["Vue.js", "Chart.js", "Weather API", "PWA"],
+    "link": "https://siyabuilds.github.io/weather-dashboard/",
+    "repo": "https://github.com/siyabuilds/weather-dashboard",
+    "image": "/weather-dashboard.png"
   },
   {
     "id": 5,
-    "title": "Person Extended",
-    "description": "Simple person class that generates a greeting and interests sentence.",
-    "technologies": ["JavaScript", "OOP", "typed.js"],
-    "link": "https://person-extended.markuptitan.site/",
-    "repo": "https://github.com/markuptitan/person-extended",
-    "image": "/person_extended.png"
+    "title": "Code Snippet Manager",
+    "description": "Organize and share code snippets with syntax highlighting and tagging system.",
+    "technologies": ["React", "Firebase", "Monaco Editor", "Material-UI"],
+    "link": "https://siyabuilds.github.io/code-snippet-manager/",
+    "repo": "https://github.com/siyabuilds/code-snippet-manager",
+    "image": "/code-snippet-manager.png"
   },
   {
     "id": 6,
-    "title": "Password Generator",
-    "description": "A tool to generate random passwords with customizable character sets.",
-    "technologies": ["JavaScript", "API", "SweetAlert2"],
-    "link": "https://password-gen.markuptitan.site/",
-    "repo": "https://github.com/markuptitan/random_password_gen",
-    "image": "/password_gen.png"
+    "title": "DevOps Monitoring Suite",
+    "description": "Comprehensive monitoring dashboard for DevOps teams with real-time metrics.",
+    "technologies": ["Docker", "Grafana", "Prometheus", "Kubernetes"],
+    "link": "https://github.com/siyabuilds/devops-monitoring",
+    "repo": "https://github.com/siyabuilds/devops-monitoring",
+    "image": "/devops-monitoring.png"
   }
 ]
