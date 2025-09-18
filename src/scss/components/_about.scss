@@ -13,7 +13,8 @@
   padding: 75px;
   max-width: 55%;
   border-radius: var(--border-radius-lg);
-  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  transition: transform var(--transition-slow),
+    box-shadow var(--transition-slow);
 
   &:hover {
     transform: translateY(-5px);
@@ -32,7 +33,7 @@
   font-size: var(--font-size-base);
   color: var(--primary-color);
   line-height: 1.6;
-  text-align: justify;
+  text-align: left;
   margin-bottom: 40px;
 }
 
@@ -51,7 +52,8 @@
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-lg);
     color: var(--primary-color);
-    transition: background-color var(--transition-normal), transform var(--transition-normal);
+    transition: background-color var(--transition-normal),
+      transform var(--transition-normal);
 
     &:hover {
       background-color: var(--span-bgs-hover);
@@ -67,7 +69,7 @@
     padding: 60px;
     text-align: center;
   }
-  
+
   .inner-container {
     max-width: 100%;
     padding: 30px;
