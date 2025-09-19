@@ -48,8 +48,12 @@ export const initActivityTimeline = async () => {
 
     for (const repo of topRepos) {
       const commits = await fetchCommits(repo.name, userName);
-      if (commits.length >= 1) {
-        // Reduced requirement to show more repos
+      if (
+        commits.length >= 1 &&
+        repo.description &&
+        repo.description.trim() !== ""
+      ) {
+        // Reduced requirement to show more repos + must have description
         validRepos.push({ repo, commits });
       }
     }
@@ -60,7 +64,11 @@ export const initActivityTimeline = async () => {
       for (const repo of remainingRepos) {
         if (validRepos.length >= 6) break;
         const commits = await fetchCommits(repo.name, userName);
-        if (commits.length >= 1) {
+        if (
+          commits.length >= 1 &&
+          repo.description &&
+          repo.description.trim() !== ""
+        ) {
           validRepos.push({ repo, commits });
         }
       }
@@ -96,7 +104,7 @@ const createRepoCard = (repo, commits) => {
     description.style.fontSize = "var(--font-size-sm)";
     description.style.marginBottom = "16px";
     description.style.lineHeight = "1.5";
-    description.textContent = repo.description;
+    description.textContent = truncateMessage(repo.description, 50);
     card.appendChild(description);
   }
 
@@ -128,7 +136,7 @@ const createRepoCard = (repo, commits) => {
         <span class="commit-date">${timeAgo}</span>
       </div>
       <div style="margin-bottom: 4px;">
-        ${truncateMessage(commit.commit.message, 80)}
+        ${truncateMessage(commit.commit.message, 25)}
       </div>
       <div class="commit-author">by ${commit.commit.author.name}</div>
     `;
