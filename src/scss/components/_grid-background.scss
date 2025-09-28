@@ -3,67 +3,80 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 45vw; // Covers 45% of viewport width on the left side
-  height: 45vh; // Covers top 45% of viewport height
-  z-index: -1; // Behind all other content
-  opacity: 0.6; // Subtle visibility
+  width: 100vw; // Full viewport width
+  height: 100vh; // Full viewport height
+  z-index: 2; // Above body background but behind other content
+  opacity: 0.1; // Subtle visibility
   pointer-events: none; // Don't interfere with user interactions
 
   // Create the grid pattern using background
-  background-image: 
-    linear-gradient(90deg, var(--border-color) 1px, transparent 1px),
-    linear-gradient(var(--border-color) 1px, transparent 1px);
+  background-image: linear-gradient(
+      90deg,
+      var(--primary-color) 1px,
+      transparent 1px
+    ),
+    linear-gradient(var(--primary-color) 1px, transparent 1px);
   background-size: 40px 40px; // Grid cell size
-  
+
   // Gradient mask to fade from left to right
-  mask: linear-gradient(90deg, 
-    rgba(0, 0, 0, 1) 0%,     // Fully visible on the left
-    rgba(0, 0, 0, 0.8) 60%,  // Start fading
-    rgba(0, 0, 0, 0.3) 85%,  // More transparent
-    rgba(0, 0, 0, 0) 100%    // Completely transparent on the right
-  );
-  -webkit-mask: linear-gradient(90deg, 
+  mask: linear-gradient(
+    90deg,
     rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.8) 60%,
-    rgba(0, 0, 0, 0.3) 85%,
+    // Fully visible on the left
+    rgba(0, 0, 0, 0.8) 40%,
+    // Start fading earlier
+    rgba(0, 0, 0, 0.3) 50%,
+    // Fade from the middle
+    rgba(0, 0, 0, 0) 100% // Completely transparent on the right
+  );
+  -webkit-mask: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 40%,
+    rgba(0, 0, 0, 0.3) 50%,
     rgba(0, 0, 0, 0) 100%
   );
 
   // Vertical pulsing animation
-  animation: gridPulse 8s ease-in-out infinite;
+  animation: gridPulse 6s ease-in-out infinite;
 }
 
 // Keyframe animation for vertical pulsing effect
 @keyframes gridPulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
-    opacity: 0.6;
+    opacity: 0.05; // Match base opacity
   }
   25% {
     transform: translateY(-3px);
-    opacity: 0.7;
+    opacity: 0.07; // Slightly increase
   }
   50% {
     transform: translateY(0px);
-    opacity: 0.5;
+    opacity: 0.04; // Slightly decrease
   }
   75% {
     transform: translateY(2px);
-    opacity: 0.8;
+    opacity: 0.06; // Subtle pulse
   }
 }
 
 // Enhanced grid pattern with pseudo-elements for more complex visual effect
 .grid-background::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: 
-    linear-gradient(90deg, transparent 0px, var(--primary-color) 1px, transparent 2px),
-    linear-gradient(transparent 0px, var(--primary-color) 1px, transparent 2px);
+  background-image: linear-gradient(
+      90deg,
+      transparent 0px,
+      var(--accent-color) 1px,
+      transparent 2px
+    ),
+    linear-gradient(transparent 0px, var(--accent-color) 1px, transparent 2px);
   background-size: 80px 80px; // Larger secondary grid
   opacity: 0.2;
   animation: gridPulseSecondary 12s ease-in-out infinite reverse;
@@ -71,7 +84,8 @@
 
 // Secondary animation for the pseudo-element
 @keyframes gridPulseSecondary {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px) translateX(0px);
     opacity: 0.2;
   }
@@ -115,7 +129,7 @@
 // Dark theme adjustments
 :root[data-theme="dark"] .grid-background {
   opacity: 0.4; // More subtle in dark theme
-  
+
   &::before {
     opacity: 0.15; // Even more subtle secondary grid in dark theme
   }
