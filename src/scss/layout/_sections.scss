@@ -1,4 +1,6 @@
 // Layout styles
 section {
+  position: relative;
+  z-index: 1; // Above grid background
   box-shadow: 0px 2.5px 25px rgba(0, 0, 0, 0.2);
 }
